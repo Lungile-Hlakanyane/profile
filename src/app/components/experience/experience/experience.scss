@@ -1,0 +1,690 @@
+.experience {
+  position: relative;
+
+  width: 100%;
+
+  background: var(--background-soft);
+
+  color: var(--text-primary);
+
+  padding: 140px 0 130px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.experience__container {
+  width: min(
+    var(--container-width),
+    100%
+  );
+
+  margin: 0 auto;
+
+  padding: 0 36px;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.experience__header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 100px;
+}
+
+
+.experience__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-secondary);
+}
+
+
+.experience__line {
+  width: 42px;
+
+  height: 1px;
+
+  background: var(--text-secondary);
+}
+
+
+.experience__label {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-muted);
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.experience__intro {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    minmax(300px, 420px);
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 110px;
+}
+
+
+.experience__title {
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: clamp(
+    4.5rem,
+    8.5vw,
+    9rem
+  );
+
+  font-weight: 700;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.experience__title--outline {
+  color: transparent;
+
+  -webkit-text-stroke:
+    2px var(--text-primary);
+}
+
+
+.experience__description {
+  max-width: 390px;
+
+  margin: 0;
+
+  padding-bottom: 8px;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+}
+
+
+/* =================================
+   EXPERIENCE LIST
+================================= */
+
+.experience__list {
+  border-top: 1px solid var(--border);
+}
+
+
+/* =================================
+   EXPERIENCE ITEM
+================================= */
+
+.experience__item {
+  display: grid;
+
+  grid-template-columns:
+    100px
+    1fr;
+
+  gap: 40px;
+
+  padding: 55px 0;
+
+  border-bottom: 1px solid var(--border);
+
+  transition:
+    padding-left 300ms ease,
+    background 300ms ease;
+}
+
+
+.experience__item:hover {
+  padding-left: 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(245, 245, 242, 0.025),
+      transparent 70%
+    );
+}
+
+
+.experience__number {
+  padding-top: 7px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text-muted);
+}
+
+
+/* =================================
+   EXPERIENCE TOP
+================================= */
+
+.experience__top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+
+.experience__period {
+  display: block;
+
+  margin-bottom: 13px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-muted);
+}
+
+
+.experience__role {
+  margin: 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    4rem
+  );
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+
+  text-transform: uppercase;
+}
+
+
+.experience__company {
+  margin: 15px 0 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: var(--text-secondary);
+}
+
+
+.experience__location {
+  margin: 8px 0 0;
+
+  font-size: 12px;
+
+  color: var(--text-muted);
+}
+
+
+.experience__status {
+  padding: 8px 14px;
+
+  border: 1px solid var(--border-strong);
+
+  border-radius: 100px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-secondary);
+}
+
+
+/* =================================
+   DETAILS
+================================= */
+
+.experience__details {
+  display: grid;
+
+  grid-template-columns:
+    200px
+    minmax(400px, 700px);
+
+  gap: 50px;
+
+  margin-top: 45px;
+}
+
+
+.experience__details-label {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+
+  color: var(--text-muted);
+}
+
+
+/* =================================
+   RESPONSIBILITIES
+================================= */
+
+.experience__responsibilities {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.experience__responsibilities li {
+  position: relative;
+
+  padding-left: 20px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+}
+
+
+.experience__responsibilities li::before {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+
+  top: 10px;
+
+  width: 5px;
+  height: 5px;
+
+  border: 1px solid var(--text-muted);
+
+  border-radius: 50%;
+}
+
+
+/* =================================
+   SUMMARY
+================================= */
+
+.experience__summary {
+  display: grid;
+
+  grid-template-columns:
+    200px
+    minmax(400px, 650px);
+
+  gap: 50px;
+
+  margin-top: 90px;
+
+  padding-top: 35px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.experience__summary-number {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: clamp(
+    3rem,
+    5vw,
+    5rem
+  );
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+}
+
+
+.experience__summary-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+
+  color: var(--text-muted);
+}
+
+
+.experience__summary p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .experience {
+    padding: 110px 0;
+  }
+
+
+  .experience__intro {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 80px;
+  }
+
+
+  .experience__description {
+    max-width: 600px;
+  }
+
+
+  .experience__details {
+    grid-template-columns:
+      160px
+      1fr;
+
+    gap: 35px;
+  }
+
+
+  .experience__summary {
+    grid-template-columns:
+      160px
+      1fr;
+
+    gap: 35px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .experience {
+    padding: 90px 0 80px;
+  }
+
+
+  .experience__container {
+    padding: 0 22px;
+  }
+
+
+  .experience__header {
+    margin-bottom: 65px;
+  }
+
+
+  .experience__eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+  }
+
+
+  .experience__line {
+    width: 28px;
+  }
+
+
+  .experience__label {
+    display: none;
+  }
+
+
+  .experience__intro {
+    gap: 35px;
+
+    margin-bottom: 65px;
+  }
+
+
+  .experience__title {
+    font-size: clamp(
+      3.2rem,
+      16vw,
+      5rem
+    );
+
+    line-height: 0.87;
+  }
+
+
+  .experience__title--outline {
+    -webkit-text-stroke:
+      1.5px var(--text-primary);
+  }
+
+
+  .experience__description {
+    max-width: 100%;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  /* Experience item */
+
+  .experience__item {
+    grid-template-columns:
+      30px
+      1fr;
+
+    gap: 15px;
+
+    padding: 35px 0;
+  }
+
+
+  .experience__item:hover {
+    padding-left: 0;
+
+    background: none;
+  }
+
+
+  .experience__number {
+    padding-top: 5px;
+  }
+
+
+  .experience__top {
+    display: block;
+  }
+
+
+  .experience__period {
+    margin-bottom: 10px;
+
+    font-size: 8px;
+  }
+
+
+  .experience__role {
+    font-size: clamp(
+      1.8rem,
+      9vw,
+      2.8rem
+    );
+
+    line-height: 0.95;
+  }
+
+
+  .experience__company {
+    margin-top: 13px;
+
+    font-size: 13px;
+  }
+
+
+  .experience__location {
+    font-size: 11px;
+  }
+
+
+  .experience__status {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    font-size: 7px;
+  }
+
+
+  /* Details */
+
+  .experience__details {
+    display: block;
+
+    margin-top: 32px;
+  }
+
+
+  .experience__details-label {
+    margin-bottom: 20px;
+  }
+
+
+  .experience__responsibilities {
+    gap: 13px;
+  }
+
+
+  .experience__responsibilities li {
+    padding-left: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+
+  /* Summary */
+
+  .experience__summary {
+    display: block;
+
+    margin-top: 65px;
+
+    padding-top: 28px;
+  }
+
+
+  .experience__summary-number {
+    margin-bottom: 20px;
+
+    font-size: 3.5rem;
+  }
+
+
+  .experience__summary-label {
+    font-size: 8px;
+  }
+
+
+  .experience__summary p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+}

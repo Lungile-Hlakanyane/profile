@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #080807;
+  --background-soft: #11110f;
+
+  --text-primary: #f5f5f2;
+  --text-secondary: #a4a49e;
+  --text-muted: #666660;
+
+  --border: rgba(245, 245, 242, 0.18);
+  --border-strong: rgba(245, 245, 242, 0.35);
+
+  --container-width: 1400px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--background);
+  color: var(--text-primary);
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}

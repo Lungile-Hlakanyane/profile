@@ -1,0 +1,296 @@
+
+<section class="contact" id="contact">
+
+  <div class="contact__container">
+
+    <!-- =========================================
+         SECTION HEADER
+    ========================================== -->
+
+    <div class="contact__header">
+
+      <div class="contact__eyebrow">
+
+        <span class="contact__line"></span>
+
+        <span>
+          05 / CONTACT
+        </span>
+
+      </div>
+
+
+      <span class="contact__label">
+        START A CONVERSATION
+      </span>
+
+    </div>
+
+
+    <!-- =========================================
+         INTRO
+    ========================================== -->
+
+    <div class="contact__intro">
+
+      <h2 class="contact__title">
+
+        <span>
+          LET'S BUILD.
+        </span>
+
+        <span class="contact__title--outline">
+          SOMETHING TOGETHER.
+        </span>
+
+      </h2>
+
+
+      <p class="contact__description">
+
+        Have a project, opportunity, or idea you'd like
+        to discuss? Send me a message and let's start
+        a conversation.
+
+      </p>
+
+    </div>
+
+
+    <!-- =========================================
+         CONTACT FORM
+    ========================================== -->
+
+    <form
+      class="contact__form"
+      (ngSubmit)="sendMessage()"
+      #contactForm="ngForm"
+    >
+
+      <!-- =========================================
+           NAME
+      ========================================== -->
+
+      <div class="contact__field">
+
+        <div class="contact__field-number">
+          01
+        </div>
+
+
+        <div class="contact__field-content">
+
+          <label
+            for="name"
+            class="contact__field-label"
+          >
+            NAME
+          </label>
+
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="contact.name"
+            placeholder="YOUR NAME"
+            autocomplete="name"
+            required
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================================
+           EMAIL
+      ========================================== -->
+
+      <div class="contact__field">
+
+        <div class="contact__field-number">
+          02
+        </div>
+
+
+        <div class="contact__field-content">
+
+          <label
+            for="email"
+            class="contact__field-label"
+          >
+            EMAIL
+          </label>
+
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="contact.email"
+            placeholder="YOUR EMAIL"
+            autocomplete="email"
+            required
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================================
+           SUBJECT
+      ========================================== -->
+
+      <div class="contact__field">
+
+        <div class="contact__field-number">
+          03
+        </div>
+
+
+        <div class="contact__field-content">
+
+          <label
+            for="subject"
+            class="contact__field-label"
+          >
+            SUBJECT
+          </label>
+
+
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            [(ngModel)]="contact.subject"
+            placeholder="WHAT WOULD YOU LIKE TO DISCUSS?"
+            required
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================================
+           MESSAGE
+      ========================================== -->
+
+      <div class="contact__field contact__field--message">
+
+        <div class="contact__field-number">
+          04
+        </div>
+
+
+        <div class="contact__field-content">
+
+          <label
+            for="message"
+            class="contact__field-label"
+          >
+            MESSAGE
+          </label>
+
+
+          <textarea
+            id="message"
+            name="message"
+            [(ngModel)]="contact.message"
+            placeholder="WRITE YOUR MESSAGE..."
+            rows="7"
+            required
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================================
+           STATUS
+      ========================================== -->
+
+      <div
+        class="contact__status contact__status--success"
+        *ngIf="submitSuccess"
+      >
+        MESSAGE SENT SUCCESSFULLY.
+      </div>
+
+
+      <div
+        class="contact__status contact__status--error"
+        *ngIf="submitError"
+      >
+        SOMETHING WENT WRONG. PLEASE TRY AGAIN.
+      </div>
+
+
+      <!-- =========================================
+           FORM ACTION
+      ========================================== -->
+
+      <div class="contact__action">
+
+        <button
+          type="submit"
+          class="contact__button"
+          [disabled]="contactForm.invalid || isSubmitting"
+        >
+
+          <span *ngIf="!isSubmitting">
+            SEND MESSAGE
+          </span>
+
+
+          <span *ngIf="isSubmitting">
+            SENDING...
+          </span>
+
+
+          <span
+            class="contact__button-arrow"
+            *ngIf="!isSubmitting"
+          >
+            →
+          </span>
+
+
+          <span
+            class="contact__button-arrow contact__button-arrow--loading"
+            *ngIf="isSubmitting"
+          >
+            ...
+          </span>
+
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =========================================
+         FOOTER NOTE
+    ========================================== -->
+
+    <div class="contact__footer">
+
+      <span>
+        AVAILABLE FOR OPPORTUNITIES
+      </span>
+
+
+      <span>
+        SOUTH AFRICA
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+

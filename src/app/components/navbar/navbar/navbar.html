@@ -1,0 +1,245 @@
+<header class="navbar">
+
+  <div class="navbar__inner">
+
+    <!-- =========================================
+         LOGO
+    ========================================== -->
+
+    <a
+      class="navbar__logo"
+      href="#home"
+      aria-label="Home"
+      (click)="closeMenu()"
+    >
+      <span class="navbar__logo-main">
+        L U N G I L E
+      </span>
+
+      <span class="navbar__logo-label"></span>
+    </a>
+
+
+    <!-- =========================================
+         DESKTOP NAVIGATION
+    ========================================== -->
+
+    <nav
+      class="navbar__links"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="#home"
+        class="navbar__link navbar__link--active"
+      >
+        HOME
+      </a>
+
+      <a
+        href="#about"
+        class="navbar__link"
+      >
+        ABOUT
+      </a>
+
+      <a
+        href="#skills"
+        class="navbar__link"
+      >
+        SKILLS
+      </a>
+
+      <a
+        href="#projects"
+        class="navbar__link"
+      >
+        PROJECTS
+      </a>
+
+      <a
+        href="#experience"
+        class="navbar__link"
+      >
+        EXPERIENCE
+      </a>
+
+      <a
+        href="#contact"
+        class="navbar__link"
+      >
+        CONTACT
+      </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         DESKTOP CTA
+    ========================================== -->
+
+    <a
+      href="#contact"
+      class="navbar__quote"
+    >
+
+      <span>
+        LET'S TALK
+      </span>
+
+      <span class="navbar__quote-icon">
+        ↗
+      </span>
+
+    </a>
+
+
+    <!-- =========================================
+         MOBILE MENU BUTTON
+    ========================================== -->
+
+    <button
+      class="navbar__menu-button"
+      type="button"
+      [class.navbar__menu-button--open]="menuOpen"
+      [attr.aria-label]="menuOpen
+        ? 'Close navigation menu'
+        : 'Open navigation menu'"
+      [attr.aria-expanded]="menuOpen"
+      (click)="toggleMenu()"
+    >
+
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================================
+       MOBILE NAVIGATION
+  ========================================== -->
+
+  <div
+    class="navbar__mobile-menu"
+    [class.navbar__mobile-menu--open]="menuOpen"
+  >
+
+    <nav
+      class="navbar__mobile-links"
+      aria-label="Mobile navigation"
+    >
+
+      <a
+        href="#home"
+        class="navbar__mobile-link"
+        (click)="closeMenu()"
+      >
+        <span class="navbar__mobile-number">
+          01
+        </span>
+
+        <span>
+          HOME
+        </span>
+      </a>
+
+
+      <a
+        href="#about"
+        class="navbar__mobile-link"
+        (click)="closeMenu()"
+      >
+        <span class="navbar__mobile-number">
+          02
+        </span>
+
+        <span>
+          ABOUT
+        </span>
+      </a>
+
+
+      <a
+        href="#skills"
+        class="navbar__mobile-link"
+        (click)="closeMenu()"
+      >
+        <span class="navbar__mobile-number">
+          03
+        </span>
+
+        <span>
+          SKILLS
+        </span>
+      </a>
+
+
+      <a
+        href="#projects"
+        class="navbar__mobile-link"
+        (click)="closeMenu()"
+      >
+        <span class="navbar__mobile-number">
+          04
+        </span>
+
+        <span>
+          PROJECTS
+        </span>
+      </a>
+
+
+      <a
+        href="#experience"
+        class="navbar__mobile-link"
+        (click)="closeMenu()"
+      >
+        <span class="navbar__mobile-number">
+          05
+        </span>
+
+        <span>
+          EXPERIENCE
+        </span>
+      </a>
+
+
+      <a
+        href="#contact"
+        class="navbar__mobile-link"
+        (click)="closeMenu()"
+      >
+        <span class="navbar__mobile-number">
+          06
+        </span>
+
+        <span>
+          CONTACT
+        </span>
+      </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         MOBILE MENU FOOTER
+    ========================================== -->
+
+    <div class="navbar__mobile-footer">
+
+      <span>
+        FULL-STACK SOFTWARE DEVELOPER
+      </span>
+
+      <span>
+        SOUTH AFRICA
+      </span>
+
+    </div>
+
+  </div>
+
+</header>
+

@@ -1,0 +1,523 @@
+.about {
+  position: relative;
+
+  width: 100%;
+
+  background: var(--background);
+
+  color: var(--text-primary);
+
+  padding: 140px 0 120px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.about__container {
+  width: min(
+    var(--container-width),
+    100%
+  );
+
+  margin: 0 auto;
+
+  padding: 0 36px;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.about__header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 100px;
+}
+
+
+.about__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-secondary);
+}
+
+
+.about__line {
+  width: 42px;
+
+  height: 1px;
+
+  background: var(--text-secondary);
+}
+
+
+.about__label {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-muted);
+}
+
+
+/* =================================
+   MAIN GRID
+================================= */
+
+.about__grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(400px, 0.9fr)
+    minmax(400px, 1fr);
+
+  gap: 100px;
+
+  align-items: start;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.about__title {
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: clamp(
+    5rem,
+    9vw,
+    9.5rem
+  );
+
+  font-weight: 700;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.about__title--outline {
+  color: transparent;
+
+  -webkit-text-stroke:
+    2px var(--text-primary);
+}
+
+
+/* =================================
+   SUMMARY
+================================= */
+
+.about__summary {
+  display: grid;
+
+  grid-template-columns: 50px 1fr;
+
+  gap: 25px;
+
+  padding-top: 10px;
+}
+
+
+.about__summary-number {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  color: var(--text-muted);
+
+  letter-spacing: 0.1em;
+}
+
+
+.about__summary-content {
+  max-width: 650px;
+}
+
+
+.about__summary-content h3 {
+  margin: 0 0 30px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.about__summary-content p {
+  margin: 0 0 22px;
+
+  font-family: 'DM Sans', sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+  color: var(--text-secondary);
+}
+
+
+.about__summary-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =================================
+   TECHNOLOGIES
+================================= */
+
+.about__technologies {
+  display: grid;
+
+  grid-template-columns: 200px 1fr;
+
+  gap: 40px;
+
+  margin-top: 120px;
+
+  padding: 30px 0;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+
+.about__technologies-label {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  color: var(--text-muted);
+}
+
+
+.about__technology-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px 28px;
+}
+
+
+.about__technology-list span {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-secondary);
+
+  transition: color 200ms ease;
+}
+
+
+.about__technology-list span:hover {
+  color: var(--text-primary);
+}
+
+
+/* =================================
+   CAPABILITIES
+================================= */
+
+.about__capabilities {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  margin-top: 80px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.about__capability {
+  min-height: 180px;
+
+  padding: 24px 25px 24px 0;
+
+  border-right: 1px solid var(--border);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+
+.about__capability:not(:first-child) {
+  padding-left: 25px;
+}
+
+
+.about__capability:last-child {
+  border-right: none;
+}
+
+
+.about__capability-number {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  color: var(--text-muted);
+
+  letter-spacing: 0.1em;
+}
+
+
+.about__capability-title {
+  max-width: 150px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .about {
+    padding: 110px 0 100px;
+  }
+
+
+  .about__grid {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+
+  .about__title {
+    font-size: clamp(
+      5rem,
+      14vw,
+      8rem
+    );
+  }
+
+
+  .about__summary {
+    max-width: 700px;
+  }
+
+
+  .about__capabilities {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .about__capability:nth-child(2) {
+    border-right: none;
+  }
+
+
+  .about__capability:nth-child(3),
+  .about__capability:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .about {
+    padding: 90px 0 80px;
+  }
+
+
+  .about__container {
+    padding: 0 22px;
+  }
+
+
+  .about__header {
+    margin-bottom: 65px;
+  }
+
+
+  .about__eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+  }
+
+
+  .about__line {
+    width: 28px;
+  }
+
+
+  .about__label {
+    display: none;
+  }
+
+
+  .about__grid {
+    gap: 55px;
+  }
+
+
+  .about__title {
+    font-size: clamp(
+      4rem,
+      20vw,
+      6rem
+    );
+
+    line-height: 0.86;
+  }
+
+
+  .about__title--outline {
+    -webkit-text-stroke:
+      1.5px var(--text-primary);
+  }
+
+
+  .about__summary {
+    grid-template-columns:
+      30px 1fr;
+
+    gap: 15px;
+  }
+
+
+  .about__summary-content h3 {
+    margin-bottom: 22px;
+
+    font-size: 10px;
+  }
+
+
+  .about__summary-content p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+  }
+
+
+  .about__technologies {
+    display: block;
+
+    margin-top: 70px;
+
+    padding: 25px 0;
+  }
+
+
+  .about__technologies-label {
+    display: block;
+
+    margin-bottom: 22px;
+  }
+
+
+  .about__technology-list {
+    gap: 12px 18px;
+  }
+
+
+  .about__technology-list span {
+    font-size: 10px;
+  }
+
+
+  .about__capabilities {
+    grid-template-columns: 1fr;
+
+    margin-top: 60px;
+  }
+
+
+  .about__capability,
+  .about__capability:not(:first-child) {
+    min-height: 130px;
+
+    padding: 20px 0;
+
+    border-right: none;
+
+    border-bottom: 1px solid var(--border);
+  }
+
+
+  .about__capability:first-child {
+    border-top: none;
+  }
+
+
+  .about__capability:last-child {
+    border-bottom: none;
+  }
+
+}
