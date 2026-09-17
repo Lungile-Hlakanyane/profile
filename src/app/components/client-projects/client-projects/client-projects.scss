@@ -1,0 +1,278 @@
+.freelance-projects {
+  padding: 120px 7%;
+  background: #0b0b0b;
+  color: #ffffff;
+  .freelance-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .section-heading {
+    margin-bottom: 70px;
+
+    .section-label {
+      display: block;
+      margin-bottom: 28px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8d8d8d;
+    }
+
+    .heading-row {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 60px;
+      align-items: end;
+
+      h2 {
+        margin: 0;
+        max-width: 800px;
+        font-size: clamp(3rem, 6vw, 6rem);
+        line-height: 0.92;
+        letter-spacing: -0.055em;
+        font-weight: 700;
+
+        span {
+          color: #707070;
+        }
+      }
+
+      p {
+        max-width: 420px;
+        margin: 0;
+        color: #a6a6a6;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+    }
+  }
+
+  .freelance-project {
+    border-top: 1px solid #2c2c2c;
+    padding-top: 40px;
+  }
+
+  .project-top {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .project-number {
+      font-size: 0.8rem;
+      color: #737373;
+      font-weight: 600;
+    }
+
+    .project-title {
+      span {
+        display: block;
+        margin-bottom: 8px;
+        color: #777777;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 3.4rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+    }
+  }
+
+  .visit-project {
+    min-height: 54px;
+    padding: 6px 7px 6px 22px;
+    border: 1px solid #3b3b3b;
+    border-radius: 100px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+
+    .arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #000000;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+
+      .arrow {
+        background: #000000;
+        color: #ffffff;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .project-description {
+    margin-left: 100px;
+    margin-bottom: 50px;
+    max-width: 800px;
+
+    p {
+      margin: 0 0 25px;
+      color: #a3a3a3;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    span {
+      padding: 10px 16px;
+      border: 1px solid #303030;
+      border-radius: 100px;
+      color: #bdbdbd;
+
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+  }
+
+  .project-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 0.7fr);
+    gap: 20px;
+    align-items: stretch;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .desktop-preview,
+  .mobile-preview {
+    overflow: hidden;
+    background: #161616;
+    border: 1px solid #242424;
+  }
+
+  .desktop-preview {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .mobile-previews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .mobile-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .freelance-projects {
+    padding: 90px 6%;
+
+    .section-heading {
+      .heading-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+
+    .project-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .mobile-previews {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .freelance-projects {
+    padding: 75px 20px;
+
+    .section-heading {
+      margin-bottom: 50px;
+
+      .heading-row {
+        h2 {
+          font-size: clamp(2.8rem, 14vw, 4.5rem);
+        }
+      }
+    }
+
+    .project-top {
+      grid-template-columns: 35px 1fr;
+
+      .visit-project {
+        grid-column: 1 / -1;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .project-description {
+      margin-left: 0;
+    }
+
+    .mobile-previews {
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .project-tags {
+      gap: 7px;
+
+      span {
+        font-size: 0.6rem;
+        padding: 8px 12px;
+      }
+    }
+  }
+}
