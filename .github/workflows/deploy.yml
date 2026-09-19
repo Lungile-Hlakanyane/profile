@@ -36,13 +36,38 @@ jobs:
       - name: Build Angular application
         run: npm run build -- --base-href /profile/
 
+      - name: Inspect build output
+        run: |
+          echo "===== DIST DIRECTORY ====="
+          ls -la dist || true
+
+          echo "===== PROFILE DIRECTORY ====="
+          ls -la dist/profile || true
+
+          echo "===== BROWSER DIRECTORY ====="
+          ls -la dist/profile/browser || true
+
+          echo "===== FIND INDEX.HTML ====="
+          find dist -name "index.html" -print
+
+      - name: Verify Angular build
+        run: |
+          if [ ! -f "dist/profile/browser/index.html" ]; then
+            echo "ERROR: dist/profile/browser/index.html was not found."
+            exit 1
+          fi
+
+          echo "Angular build verified successfully."
+          echo "index.html exists."
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/profile/browser
+          path: dist/profile/browser
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
