@@ -615,3 +615,778 @@
 
 }
 
+/* =================================
+   ASK ABOUT ME MODAL
+================================= */
+
+.ask-modal {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
+
+}
+
+
+/* =================================
+   OPEN STATE
+================================= */
+
+.ask-modal--open {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+}
+
+
+/* =================================
+   BACKDROP
+================================= */
+
+.ask-modal__backdrop {
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(8px);
+
+}
+
+
+/* =================================
+   MODAL CONTENT
+================================= */
+
+.ask-modal__content {
+
+  position: relative;
+
+  z-index: 1;
+
+  width: min(620px, 100%);
+
+  padding: 42px;
+
+  background: var(--background-soft);
+
+  border: 1px solid var(--border-strong);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35);
+
+  transform: translateY(20px) scale(0.98);
+
+  transition:
+    transform 300ms ease;
+
+}
+
+
+.ask-modal--open .ask-modal__content {
+
+  transform: translateY(0) scale(1);
+
+}
+
+
+/* =================================
+   CLOSE BUTTON
+================================= */
+
+.ask-modal__close {
+
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+
+}
+
+
+.ask-modal__close:hover {
+
+  background: rgba(245, 245, 242, 0.08);
+
+  border-color: var(--border-strong);
+
+  transform: rotate(90deg);
+
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.ask-modal__header {
+
+  margin-bottom: 28px;
+
+}
+
+
+.ask-modal__eyebrow {
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color: var(--text-muted);
+
+}
+
+
+.ask-modal__header h2 {
+
+  margin: 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: clamp(2rem, 5vw, 3.4rem);
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+
+  color: var(--text-primary);
+
+}
+
+
+.ask-modal__header p {
+
+  max-width: 480px;
+
+  margin: 16px 0 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+
+}
+
+
+/* =================================
+   FORM
+================================= */
+
+.ask-modal__form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+}
+
+
+/* =================================
+   TEXTAREA
+================================= */
+
+.ask-modal__input {
+
+  width: 100%;
+
+  min-height: 130px;
+
+  padding: 18px;
+
+  resize: vertical;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background: rgba(245, 245, 242, 0.035);
+
+  color: var(--text-primary);
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  transition:
+    border-color 200ms ease,
+    background 200ms ease;
+
+}
+
+
+.ask-modal__input::placeholder {
+
+  color: var(--text-muted);
+
+}
+
+
+.ask-modal__input:focus {
+
+  border-color: var(--border-strong);
+
+  background: rgba(245, 245, 242, 0.06);
+
+}
+
+
+.ask-modal__input:disabled {
+
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+}
+
+
+/* =================================
+   RESPONSE
+================================= */
+
+.ask-modal__response {
+
+  padding: 18px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: rgba(245, 245, 242, 0.035);
+
+}
+
+
+.ask-modal__response-label {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color: var(--text-muted);
+
+}
+
+
+.ask-modal__response p {
+
+  margin: 0;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: var(--text-primary);
+
+}
+
+
+/* =================================
+   LOADING
+================================= */
+
+.ask-modal__loading {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 4px 0;
+
+}
+
+
+.ask-modal__loading > span:not(.ask-modal__loading-text) {
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--text-primary);
+
+  animation: askModalPulse 1.2s infinite ease-in-out;
+
+}
+
+
+.ask-modal__loading > span:nth-child(2) {
+
+  animation-delay: 150ms;
+
+}
+
+
+.ask-modal__loading > span:nth-child(3) {
+
+  animation-delay: 300ms;
+
+}
+
+
+.ask-modal__loading-text {
+
+  margin-left: 8px;
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-muted);
+
+}
+
+
+@keyframes askModalPulse {
+
+  0%,
+  80%,
+  100% {
+
+    opacity: 0.25;
+
+    transform: translateY(0);
+
+  }
+
+  40% {
+
+    opacity: 1;
+
+    transform: translateY(-3px);
+
+  }
+
+}
+
+
+/* =================================
+   SUBMIT BUTTON
+================================= */
+
+.ask-modal__submit {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 7px 7px 7px 20px;
+
+  border: 1px solid var(--border-strong);
+
+  border-radius: 100px;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease;
+
+}
+
+
+.ask-modal__submit:hover:not(:disabled) {
+
+  background: rgba(245, 245, 242, 0.08);
+
+  border-color: rgba(245, 245, 242, 0.6);
+
+}
+
+
+.ask-modal__submit:disabled {
+
+  opacity: 0.4;
+
+  cursor: not-allowed;
+
+}
+
+
+.ask-modal__submit-icon {
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--text-primary);
+
+  color: var(--background);
+
+  font-size: 17px;
+
+  transition: transform 200ms ease;
+
+}
+
+
+.ask-modal__submit:hover:not(:disabled)
+.ask-modal__submit-icon {
+
+  transform: rotate(45deg);
+
+}
+
+/* =========================================================
+   ASK ABOUT ME - MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .ask-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+  .ask-modal__backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .ask-modal__content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 100%;
+
+    max-height: 92vh;
+
+    padding: 28px 20px 24px;
+
+    border-radius: 24px 24px 0 0;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    animation: askModalMobileIn 0.3s ease-out;
+  }
+
+  .ask-modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 2;
+  }
+
+  .ask-modal__header {
+    padding-right: 45px;
+  }
+
+  .ask-modal__eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .ask-modal__header h2 {
+    font-size: clamp(28px, 8vw, 38px);
+    line-height: 1.05;
+
+    margin: 10px 0 12px;
+  }
+
+  .ask-modal__header p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .ask-modal__form {
+    width: 100%;
+  }
+
+  .ask-modal__input {
+    width: 100%;
+    min-height: 120px;
+
+    padding: 16px;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    border-radius: 14px;
+
+    resize: none;
+
+    box-sizing: border-box;
+  }
+
+  .ask-modal__counter {
+    margin-top: 7px;
+
+    text-align: right;
+
+    font-size: 11px;
+  }
+
+  .ask-modal__response {
+    margin-top: 18px;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    max-height: 260px;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ask-modal__response-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+  }
+
+  .ask-modal__response p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+
+  .ask-modal__loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 18px;
+    padding: 14px 16px;
+
+    border-radius: 12px;
+  }
+
+  .ask-modal__loading-text {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+  }
+
+  .ask-modal__submit {
+    width: 100%;
+    min-height: 54px;
+
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 18px;
+
+    border-radius: 14px;
+
+    font-size: 12px;
+    letter-spacing: 1.2px;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ask-modal__submit-icon {
+    font-size: 20px;
+  }
+
+  .ask-modal__hint {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 10px;
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .ask-modal__content {
+    padding: 24px 16px 20px;
+  }
+
+  .ask-modal__header h2 {
+    font-size: 28px;
+  }
+
+  .ask-modal__header p {
+    font-size: 13px;
+  }
+
+  .ask-modal__input {
+    min-height: 105px;
+  }
+
+  .ask-modal__response p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE MODAL ANIMATION
+   ========================================================= */
+
+@keyframes askModalMobileIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

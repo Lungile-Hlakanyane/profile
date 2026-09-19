@@ -2,6 +2,7 @@
 
   <div class="navbar__inner">
 
+
     <!-- =========================================
          LOGO
     ========================================== -->
@@ -12,11 +13,13 @@
       aria-label="Home"
       (click)="closeMenu()"
     >
+
       <span class="navbar__logo-main">
         L U N G I L E
       </span>
 
       <span class="navbar__logo-label"></span>
+
     </a>
 
 
@@ -75,23 +78,25 @@
 
 
     <!-- =========================================
-         DESKTOP CTA
+         DESKTOP ASK ABOUT ME
     ========================================== -->
 
-    <a
-      href="#contact"
+    <button
       class="navbar__quote"
+      type="button"
+      (click)="openAskModal()"
+      aria-label="Ask about Lungile"
     >
 
       <span>
-        LET'S TALK
+        ASK ABOUT ME
       </span>
 
       <span class="navbar__quote-icon">
         ↗
       </span>
 
-    </a>
+    </button>
 
 
     <!-- =========================================
@@ -131,11 +136,15 @@
       aria-label="Mobile navigation"
     >
 
+
+      <!-- HOME -->
+
       <a
         href="#home"
         class="navbar__mobile-link"
         (click)="closeMenu()"
       >
+
         <span class="navbar__mobile-number">
           01
         </span>
@@ -143,14 +152,18 @@
         <span>
           HOME
         </span>
+
       </a>
 
+
+      <!-- ABOUT -->
 
       <a
         href="#about"
         class="navbar__mobile-link"
         (click)="closeMenu()"
       >
+
         <span class="navbar__mobile-number">
           02
         </span>
@@ -158,14 +171,18 @@
         <span>
           ABOUT
         </span>
+
       </a>
 
+
+      <!-- SKILLS -->
 
       <a
         href="#skills"
         class="navbar__mobile-link"
         (click)="closeMenu()"
       >
+
         <span class="navbar__mobile-number">
           03
         </span>
@@ -173,14 +190,18 @@
         <span>
           SKILLS
         </span>
+
       </a>
 
+
+      <!-- PROJECTS -->
 
       <a
         href="#projects"
         class="navbar__mobile-link"
         (click)="closeMenu()"
       >
+
         <span class="navbar__mobile-number">
           04
         </span>
@@ -188,14 +209,18 @@
         <span>
           PROJECTS
         </span>
+
       </a>
 
+
+      <!-- EXPERIENCE -->
 
       <a
         href="#experience"
         class="navbar__mobile-link"
         (click)="closeMenu()"
       >
+
         <span class="navbar__mobile-number">
           05
         </span>
@@ -203,14 +228,18 @@
         <span>
           EXPERIENCE
         </span>
+
       </a>
 
+
+      <!-- CONTACT -->
 
       <a
         href="#contact"
         class="navbar__mobile-link"
         (click)="closeMenu()"
       >
+
         <span class="navbar__mobile-number">
           06
         </span>
@@ -218,13 +247,51 @@
         <span>
           CONTACT
         </span>
+
       </a>
+
+       <a
+        class="navbar__mobile-link"
+        (click)="openAskModal()"
+      >
+
+        <span class="navbar__mobile-number">
+          07
+        </span>
+
+        <span>
+          ASK ABOUT ME
+        </span>
+
+      </a>
+
+
+      <!-- =========================================
+           MOBILE ASK ABOUT ME
+      ========================================== -->
+
+      <button style="position: relative; bottom:150%;"
+        class="navbar__quote navbar__quote--mobile"
+        type="button"
+        (click)="openAskModal()"
+        aria-label="Ask about Lungile"
+      >
+
+        <span>
+          ASK ABOUT ME
+        </span>
+
+        <span class="navbar__quote-icon">
+          ↗
+        </span>
+
+      </button>
 
     </nav>
 
 
     <!-- =========================================
-         MOBILE MENU FOOTER
+         MOBILE FOOTER
     ========================================== -->
 
     <div class="navbar__mobile-footer">
@@ -241,5 +308,190 @@
 
   </div>
 
-</header>
 
+  <!-- =========================================
+       ASK ABOUT ME MODAL
+  ========================================== -->
+
+  @if (askModalOpen) {
+
+    <div
+      class="ask-modal ask-modal--open"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ask-modal-title"
+    >
+
+
+      <!-- =======================================
+           BACKDROP
+      ======================================== -->
+
+      <div
+        class="ask-modal__backdrop"
+        (click)="closeAskModal()"
+      ></div>
+
+
+      <!-- =======================================
+           MODAL CONTENT
+      ======================================== -->
+
+      <div class="ask-modal__content">
+
+
+        <!-- CLOSE -->
+
+        <button
+          class="ask-modal__close"
+          type="button"
+          aria-label="Close ask about me"
+          (click)="closeAskModal()"
+        >
+          ×
+        </button>
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <div class="ask-modal__header">
+
+          <span class="ask-modal__eyebrow">
+            ASK ABOUT ME
+          </span>
+
+          <h2 id="ask-modal-title">
+            Ask about me<span>...</span>
+          </h2>
+
+          <p>
+            Ask anything about my experience,
+            skills, projects or development journey.
+          </p>
+
+        </div>
+
+
+        <!-- =====================================
+             CHAT FORM
+        ====================================== -->
+
+        <div class="ask-modal__form">
+
+
+          <!-- QUESTION INPUT -->
+
+<textarea
+  [(ngModel)]="userQuestion"
+  class="ask-modal__input"
+  placeholder="e.g. What technologies does Lungile work with?"
+  rows="4"
+  maxlength="500"
+  [disabled]="isLoading"
+  (keydown.enter)="onQuestionKeydown($event)"
+></textarea>
+
+
+          <!-- CHARACTER COUNT -->
+
+          <div class="ask-modal__counter">
+            {{ userQuestion.length }}/500
+          </div>
+
+
+          <!-- =================================
+               RESPONSE
+          ================================== -->
+
+          @if (chatbotResponse) {
+
+            <div
+              class="ask-modal__response"
+              aria-live="polite"
+            >
+
+              <span class="ask-modal__response-label">
+                LUNGILE'S ASSISTANT
+              </span>
+
+              <p>
+                {{ chatbotResponse }}
+              </p>
+
+            </div>
+
+          }
+
+
+          <!-- =================================
+               LOADING
+          ================================== -->
+
+          @if (isLoading) {
+
+            <div
+              class="ask-modal__loading"
+              aria-live="polite"
+            >
+
+              <div class="ask-modal__loading-dots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+              </div>
+
+              <span class="ask-modal__loading-text">
+                THINKING...
+              </span>
+
+            </div>
+
+          }
+
+
+          <!-- =================================
+               ASK BUTTON
+          ================================== -->
+
+          <button
+            class="ask-modal__submit"
+            type="button"
+            [disabled]="
+              isLoading ||
+              !userQuestion.trim()
+            "
+            (click)="askQuestion()"
+          >
+
+            <span>
+              {{ isLoading ? 'THINKING...' : 'ASK QUESTION' }}
+            </span>
+
+            <span class="ask-modal__submit-icon">
+              ↗
+            </span>
+
+          </button>
+
+
+          <!-- =================================
+               HINT
+          ================================== -->
+
+          <p class="ask-modal__hint">
+            Press ENTER to ask · SHIFT + ENTER for a new line
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  }
+
+</header>
